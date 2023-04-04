@@ -28,14 +28,10 @@ public class Methods extends Depo {
         System.out.println(urunList);
         System.out.println("Cikis yapmak istediğiniz Urun Id` sini giriniz");
         idSecim = scan.nextInt();
+        System.out.println("Cikis yapmak istediğiniz miktari girin");
+        miktar=scan.nextInt();
         if (idList.contains(idSecim)) {
-            urunIsimList.remove(idList.indexOf(idSecim));
-            ureticiList.remove(idList.indexOf(idSecim));
-            miktarList.remove(idList.indexOf(idSecim));
-            birimList.remove(idList.indexOf(idSecim));
-            rafList.remove(idList.indexOf(idSecim));
-            urunList.remove(idList.indexOf(idSecim));
-            idList.remove((Integer) idSecim);
+            urunList.get(idList.indexOf(idSecim)).setMiktar(miktar);
             System.out.println("yapmak istediğiniz islemi giriniz\n1- Ana Menu \n2- Urun Cikis");
             secim = scan.next();
             switch (secim) {
